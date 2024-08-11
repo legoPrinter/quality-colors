@@ -20,12 +20,12 @@ COLORS = {
 
 trait_names = [
     "passionate", "formal", "creative", "optimistic", 
-    "diciplined", "energetic", "happy", "elderly", "healthy",
+    "disciplined", "energetic", "happy", "elderly", "healthy",
     "wealthy", "authoritative"
 ]
 
 pride_names = [
-    "family", "religion", "freindship",
+    "family", "religion", "friendship",
     "sports", "teaching", "shopping", 
     "education", "gaming", "exeresize", 
     "traveling", "work", "a simple lifestyle",
@@ -59,7 +59,7 @@ def get_user_qualities():
             user_qualities[trait_name] = value
             break
 
-    print("enter how mutch you value the following from 1 through 5:")
+    print("enter how much you value the following from 1 through 5:")
     for pride_name in pride_names:
         while True:
             value = parse_user_input(input("  -  do you value " + pride_name + ": "))
