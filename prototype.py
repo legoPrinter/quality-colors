@@ -1,6 +1,5 @@
 import json;
-import sys
-from termcolor import colored, cprint
+from termcolor import cprint
 
 NUM_SELECTED_COLORS = 5
 
