@@ -1,0 +1,106 @@
+{
+    "core values": [
+        "honesty",
+        "sophistication",
+        "sympathy", 
+        "loyalty", 
+        "respect",
+        "responsibility", 
+        "courage", 
+        "kindness", 
+        "patience",
+        "humility", 
+        "gratitude", 
+        "perseverance", 
+        "optimism", 
+        "curiosity",
+        "creativity", 
+        "independence", 
+        "teamwork", 
+        "leadership", 
+        "adaptability",
+        "balance", 
+        "growth", 
+        "discipline", 
+        "efficiency",
+        "quality", 
+        "success", 
+        "freedom", 
+        "justice", 
+        "diversity", 
+        "sustainability", 
+        "community", 
+        "family", 
+        "friendship", 
+        "love", 
+        "happiness", 
+        "peace", 
+        "joy", 
+        "meaning"
+    ],
+    "sources of pride": {
+        "creative hobbies": [
+            "painting", 
+            "drawing", 
+            "writing", 
+            "music",
+            "photography",
+            "video editing",
+            "graphic design",
+            "sewing",
+            "knitting",
+            "pottery",
+            "sculpting"
+        ],
+        "active hobbies": [
+            "hiking",
+            "running",
+            "cycling",
+            "swimming",
+            "rock climbing",
+            "dancing",
+            "martial arts",
+            "yoga",
+            "fitness",
+            "gardening"
+        ],
+        "intellectual hobbies": [
+            "reading",
+            "chess",
+            "puzzles",
+            "coding",
+            "learning languages",
+            "playing strategy games"
+        ],
+        "collectible hobbies": [
+            "coin collecting",
+            "stamp collecting",
+            "card collecting",
+            "toy collecting",
+            "antique collecting"
+        ],
+        "other hobbies": [
+            "cooking and baking",
+            "DIY projects",
+            "home improvement",
+            "gaming"
+        ],
+        "achievements": [
+            "family",
+            "friends",
+            "career",
+            "education",
+            "faith",
+            "volunteering",
+            "personal growth",
+            "health and wellness"
+        ]
+    },
+    "personality traits": [
+        "openness",
+        "conscientiousness",
+        "extraversion",
+        "agreeableness",
+        "neuroticism"
+    ]
+}
