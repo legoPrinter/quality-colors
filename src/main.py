@@ -21,36 +21,45 @@ COLORS = {
 
 color_qualities = json.load(open("../res/color_qualities.json"))
 
-def find_color_weights(user_qualities):
-
-    inputed_core_values = user_qualities["core values"]
+def merge_user_qualities_to_core_values(user_qualities):
+    core_values = user_qualities["core values"]
 
     # make core values a dictionary with weights
-    core_values = {}
-    for value in inputed_core_values:
-        core_values[value] = 1
+    new_core_values = {}
+    for value in core_values:
+        new_core_values[value] = 1
 
     # merge users input of core values with their personality traits and sources of pride
-    new_core_values = core_values # work in progress
+    personality_traits = user_qualities["personality traits"]
+    merged_core_values = core_values # work in progress
+
+    return merged_core_values
+
+def find_color_weights(user_values):
 
     # find the weights of each color based on the core values
-    color_weights = {}
+    weights_of_colors = {}
     for color_name in color_qualities:
-        color_weight = 0
+        weight_of_color = 0
 
-        qualities_of_color = color_qualities[color_name]
-        color_core_values = qualities_of_color["core values"]
-        color_core_value_names = color_core_values.keys()
+        # the core values that the current color has
+        color_values = color_qualities[color_name]["core values"]
 
-        core_value_names = new_core_values.keys()
+        # the names of core values that the user has
+        user_value_keys = list(user_values.keys())
 
-        for core_value_name in core_value_names:
-            if not color_core_value_names.__contains__(core_value_name): continue
-            color_weight += color_core_values[core_value_name] * new_core_values[core_value_name]
+        # iterate over all of the color values
+        for color_value_key, color_value in color_values.items():
 
-        color_weights[color_name] = color_weight
+            # check if the user core values contain the name of color value in the dictionary. if not, get the next color value
+            if not (color_value_key in user_value_keys): continue
 
-    return color_weights
+
+            weight_of_color += color_value
+
+        weights_of_colors[color_name] = weight_of_color
+
+    return weights_of_colors
 
 
 def find_top_n_weight_keys(value_set, n):
@@ -71,8 +80,11 @@ def find_top_n_weight_keys(value_set, n):
 # 1. record the user's traits & values
 user_qualities = user_reader.get_user_qualities(5, 5)
 
+# 2. compress all of user qualities into core values to make the next step simpler
+user_values = merge_user_qualities_to_core_values(user_qualities)
+
 # 2. give weights to the colors based on how relevant they are to the user's qualities
-color_weights = find_color_weights(user_qualities)
+color_weights = find_color_weights(user_values)
 
 # 3. pick the N most relavant colors
 top_color_names = find_top_n_weight_keys(color_weights, NUM_SELECTED_COLORS)
