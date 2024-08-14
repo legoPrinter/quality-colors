@@ -30,6 +30,7 @@ def merge_user_qualities_to_core_values(user_qualities):
         new_core_values[value] = 1
 
     # merge users input of core values with their personality traits and sources of pride
+    merge_significance = 0 # must be a percentage
     personality_traits = user_qualities["personality traits"]
     merged_core_values = new_core_values # work in progress
 
@@ -51,11 +52,17 @@ def find_color_weights(user_values):
         # iterate over all of the color values
         for color_value_key, color_value in color_values.items():
 
-            # check if the user core values contain the name of color value in the dictionary. if not, get the next color value
-            if not (color_value_key in user_value_keys): continue
+            # iterate over user values
+            for user_value_key, user_value in user_values.items():
+                
+                # check if the user value key is the color value key. If not, get the next user value key or end the loop
+                if user_value_key != color_value_key:
+                    continue
 
+                # `user_value` is how much of the core value the user has. `color_value` is how much the color is affected by the core value
+                weight_of_color += color_value * user_value
 
-            weight_of_color += color_value
+                break
 
         weights_of_colors[color_name] = weight_of_color
 
