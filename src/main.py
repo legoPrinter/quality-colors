@@ -4,6 +4,7 @@ from termcolor import cprint
 import user_reader
 
 NUM_SELECTED_COLORS = 5
+NUM_CORE_VALUES_FROM_INPUT = 6
 
 COLORS = {
     "red": [255, 0, 0],
@@ -57,16 +58,23 @@ def find_color_weights(user_values):
                     continue
 
                 # `user_value` is how much of the core value the user has. `color_value` is how much the color is affected by the core value
-                weight_of_color += color_value * user_value
+                # dividing the product by `NUM_CORE_VALUES_FROM_INPUT` keeps the weight as a percentage
+                weight_of_color += color_value * user_value / float(NUM_CORE_VALUES_FROM_INPUT)
 
                 break
 
         weights_of_colors[color_name] = weight_of_color
 
+    print(weights_of_colors)
+
     return weights_of_colors
 
 
 def find_top_n_weight_keys(value_set, n):
+
+    # prevent mutating the paramater
+    value_set = value_set.copy()
+
     result = []
     for _count in range(0, n):
         max_value = -1
@@ -82,7 +90,7 @@ def find_top_n_weight_keys(value_set, n):
 
 
 # 1. record the user's traits & values
-user_qualities = user_reader.get_user_qualities(5, 5)
+user_qualities = user_reader.get_user_qualities(NUM_CORE_VALUES_FROM_INPUT, 5)
 
 # 2. compress all of user qualities into core values to make the next step simpler
 user_values = merge_user_qualities_to_core_values(user_qualities)
@@ -104,4 +112,9 @@ print("| these are your colors from most to least significant: \n")
 
 for i in range(0, NUM_SELECTED_COLORS):
     color = top_colors_rgb[i]
-    cprint("\033[38;2;" + str(color[0]) + ";" + str(color[1]) + ";" + str(color[2]) + "m| - " + top_color_names[i] + "\033[0m")
+    color_name = top_color_names[i]
+    color_weight = int(color_weights[color_name] * 100)
+
+    displayed_string = "| - " + color_name + ": " + str(color_weight) + "% match"
+
+    cprint("\033[38;2;" + str(color[0]) + ";" + str(color[1]) + ";" + str(color[2]) + "m" + displayed_string + "\033[0m")

@@ -198,7 +198,7 @@ def get_user_personality_traits():
     return user_personality_traits
 
 def get_user_qualities(num_core_values, num_sources_of_pride):
-    #return example_user_qualities # for debugging purposes
+    return example_user_qualities # for debugging purposes
 
     # work in progress
     user_qualities = {
