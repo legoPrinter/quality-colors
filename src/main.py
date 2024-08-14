@@ -46,9 +46,6 @@ def find_color_weights(user_values):
         # the core values that the current color has
         color_values = color_qualities[color_name]["core values"]
 
-        # the names of core values that the user has
-        user_value_keys = list(user_values.keys())
-
         # iterate over all of the color values
         for color_value_key, color_value in color_values.items():
 
