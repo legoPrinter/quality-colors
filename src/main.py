@@ -69,7 +69,7 @@ def find_top_n_weight_keys(value_set, n):
 
 
 # 1. record the user's traits & values
-user_qualities = user_reader.get_user_qualities()
+user_qualities = user_reader.get_user_qualities(5, 5)
 
 # 2. give weights to the colors based on how relevant they are to the user's qualities
 color_weights = find_color_weights(user_qualities)
