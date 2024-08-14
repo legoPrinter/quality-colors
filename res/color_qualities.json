@@ -57,7 +57,7 @@
             "conscientiousness": 0,
             "extraversion": 0.2,
             "agreeableness": 0,
-            "neuroticism": 0
+            "neuroticism": 0.7
         }
     },
     "green": {
@@ -85,9 +85,9 @@
         "personality traits": {
             "openness": 0.2,
             "conscientiousness": 0.1,
-            "extraversion": 0,
-            "agreeableness": 0,
-            "neuroticism": 0
+            "extraversion": 0.5,
+            "agreeableness": 0.5,
+            "neuroticism": -0.2
         }
     },
     "blue": {
@@ -121,9 +121,9 @@
         "personality traits": {
             "openness": 0.8,
             "conscientiousness": 1,
-            "extraversion": 0,
-            "agreeableness": 0,
-            "neuroticism": 0
+            "extraversion": 0.2,
+            "agreeableness": 1,
+            "neuroticism": -0.7
         }
     },
     "pink": {
@@ -148,9 +148,9 @@
         "personality traits": {
             "openness": 0,
             "conscientiousness": -0.5,
-            "extraversion": 0,
-            "agreeableness": 0,
-            "neuroticism": 0
+            "extraversion": 0.7,
+            "agreeableness": 1,
+            "neuroticism": 0.4
         }
     },
     "orange": {
@@ -179,9 +179,9 @@
         "personality traits": {
             "openness": 0.5,
             "conscientiousness": -0.2,
-            "extraversion": 0,
-            "agreeableness": 0,
-            "neuroticism": 0
+            "extraversion": 0.4,
+            "agreeableness": 0.3,
+            "neuroticism": 0.3
         }
     },
     "violete": {
@@ -215,8 +215,8 @@
         "personality traits": {
             "openness": -0.2,
             "conscientiousness": 1,
-            "extraversion": 0,
-            "agreeableness": 0,
+            "extraversion": 0.9,
+            "agreeableness": 0.9,
             "neuroticism": 0
         }
     },
@@ -249,8 +249,8 @@
             "openness": -1,
             "conscientiousness": -0.5,
             "extraversion": 0,
-            "agreeableness": 0,
-            "neuroticism": 0
+            "agreeableness": 0.8,
+            "neuroticism": -0.5
         }
     },
     "black": {
@@ -279,9 +279,9 @@
         "personality traits": {
             "openness": -1,
             "conscientiousness": 1,
-            "extraversion": 0,
-            "agreeableness": 0,
-            "neuroticism": 0
+            "extraversion": -0.8,
+            "agreeableness": 0.4,
+            "neuroticism": 0.7
         }
     },
     "white": {
@@ -302,7 +302,7 @@
             "adaptability": 1,
             "freedom": 0.5,
             "justice": 1,
-            "independence": 1,
+            "independence": 0.6,
             "humility": 1
         },
         "sources of pride": {
@@ -311,9 +311,9 @@
         "personality traits": {
             "openness": -0.2,
             "conscientiousness": -0.5,
-            "extraversion": 0,
-            "agreeableness": 0,
-            "neuroticism": 0
+            "extraversion": 1,
+            "agreeableness": 0.8,
+            "neuroticism": -0.4
         }
     },
     "gray": {
@@ -323,7 +323,7 @@
             "responsibility": 1,
             "humility": 1,
             "perseverance": 0.5,
-            "leadership": 1,
+            "leadership": 0.7,
             "discipline": 1,
             "sustainability": 1,
             "family": 0.5,
@@ -340,9 +340,9 @@
         "personality traits": {
             "openness": -0.3,
             "conscientiousness": -0.3,
-            "extraversion": 0,
-            "agreeableness": 0,
-            "neuroticism": 0
+            "extraversion": -1,
+            "agreeableness": -0.4,
+            "neuroticism": -0.6
         }
     }
 }

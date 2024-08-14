@@ -62,19 +62,20 @@ user_reader.get_user_qualities()
 
 # 2. give weights to the colors based on how relevant they are to the user's qualities
 #color_weights = find_color_weights(user_qualities)
+color_weights = {"yellow": 0.9, "green": 0.6, "violete": 0.7, "brown": 0.95, "orange": 0.78}
 
 # 3. pick the N most relavant colors
-#top_color_names = find_top_n_weight_keys(color_weights, NUM_SELECTED_COLORS)
+top_color_names = find_top_n_weight_keys(color_weights, NUM_SELECTED_COLORS)
 
 # 4. convert the color names to rgb values
-#top_colors_rgb = []
-#for color_name in top_color_names:
-#    top_colors_rgb.append(COLORS[color_name])
+top_colors_rgb = []
+for color_name in top_color_names:
+    top_colors_rgb.append(COLORS[color_name])
 
 # 5. display the colors
 
-#print("| these are your colors from most to least significant: \n")
+print("| these are your colors from most to least significant: \n")
 
-#for i in range(0, NUM_SELECTED_COLORS):
-#    color = top_colors_rgb[i]
-#   cprint("\033[38;2;" + str(color[0]) + ";" + str(color[1]) + ";" + str(color[2]) + "m| - " + top_color_names[i] + "\033[0m")
+for i in range(0, NUM_SELECTED_COLORS):
+    color = top_colors_rgb[i]
+    cprint("\033[38;2;" + str(color[0]) + ";" + str(color[1]) + ";" + str(color[2]) + "m| - " + top_color_names[i] + "\033[0m")
