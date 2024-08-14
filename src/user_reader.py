@@ -192,17 +192,18 @@ def get_user_personality_traits():
         index += 1
         
         # add the choise to the result
-        user_personality_traits[personality_trait] = choise
+        user_personality_traits[personality_trait] = choise/5
 
     return user_personality_traits
 
-def get_user_qualities():
+def get_user_qualities(num_core_values, num_sources_of_pride):
     #return example_user_qualities # for debugging purposes
 
+    # work in progress
     user_qualities = {
-        "core values": get_user_core_values(3),
-        "sources of pride": get_user_sources_of_pride(3),
-        "personality traits": get_user_personality_traits()
+        "core values": get_user_core_values(num_core_values),
+        "sources of pride": example_user_qualities["sources of pride"], #get_user_sources_of_pride(num_sources_of_pride),
+        "personality traits": example_user_qualities["personality traits"] #get_user_personality_traits()
     }
 
     print(user_qualities)

@@ -22,20 +22,31 @@ COLORS = {
 color_qualities = json.load(open("../res/color_qualities.json"))
 
 def find_color_weights(user_qualities):
-    # Color_qualities and it's children are dictionaries
-    # Iterating over dictionaries provides their keys
 
+    inputed_core_values = user_qualities["core values"]
+
+    # make core values a dictionary with weights
+    core_values = {}
+    for value in inputed_core_values:
+        core_values[value] = 1
+
+    # merge users input of core values with their personality traits and sources of pride
+    new_core_values = core_values # work in progress
+
+    # find the weights of each color based on the core values
     color_weights = {}
-
     for color_name in color_qualities:
-        differences = 0
-        color = color_qualities[color_name]
-        for quality in color:
-            difference = abs(color[quality] - user_qualities[quality])
-            differences += difference
+        color_weight = 0
 
-        # find the weight of the color. The smaller the difference, the bigger the weight
-        color_weight = 1 - ((float(differences) / float(qualities_length)) / 4.0)
+        qualities_of_color = color_qualities[color_name]
+        color_core_values = qualities_of_color["core values"]
+        color_core_value_names = color_core_values.keys()
+
+        core_value_names = new_core_values.keys()
+
+        for core_value_name in core_value_names:
+            if not color_core_value_names.__contains__(core_value_name): continue
+            color_weight += color_core_values[core_value_name] * new_core_values[core_value_name]
 
         color_weights[color_name] = color_weight
 
@@ -58,11 +69,10 @@ def find_top_n_weight_keys(value_set, n):
 
 
 # 1. record the user's traits & values
-user_reader.get_user_qualities()
+user_qualities = user_reader.get_user_qualities()
 
 # 2. give weights to the colors based on how relevant they are to the user's qualities
-#color_weights = find_color_weights(user_qualities)
-color_weights = {"yellow": 0.9, "green": 0.6, "violete": 0.7, "brown": 0.95, "orange": 0.78}
+color_weights = find_color_weights(user_qualities)
 
 # 3. pick the N most relavant colors
 top_color_names = find_top_n_weight_keys(color_weights, NUM_SELECTED_COLORS)
