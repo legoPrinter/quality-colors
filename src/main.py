@@ -31,7 +31,7 @@ def merge_user_qualities_to_core_values(user_qualities):
 
     # merge users input of core values with their personality traits and sources of pride
     personality_traits = user_qualities["personality traits"]
-    merged_core_values = core_values # work in progress
+    merged_core_values = new_core_values # work in progress
 
     return merged_core_values
 

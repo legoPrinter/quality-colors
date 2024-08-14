@@ -66,11 +66,12 @@ def get_user_choises(items, amount_choises, key_word):
         print(f"your choise was: #{choise}. {items[choise-1]}")
 
         # remove the user's choise from the list
+        item_chosen = items[choise-1]
         del items[choise-1]
         items_length -= 1
 
         # add the user's choise to the list of choises
-        choises.append(choise-1)
+        choises.append(item_chosen)
 
     return choises
 
