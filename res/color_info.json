@@ -1,0 +1,13 @@
+{
+    "Red": ["Lust", "Power", "Royalty", "Excitement", "Love", "Speed", "Anger", "Passion", "Danger", "Communication"],
+    "Yellow": ["Competence", "Happiness", "Cheap", "Low quality", "Sunshine", "Ideas"],
+    "Green": ["Nature", "Health/Healing", "Support", "Money", "Luck", "Youth", "Fertility", "Jealousy"],
+    "Blue": ["Sophistication", "Competence", "High quality", "Corporate", "Reliability", "Ocean", "Sky", "Peace", "Stability", "Inspiration", "Wisdom", "Truth", "Sadness", "Depression"],
+    "Pink": ["Authority", "Flirty and feminine", "Sweetness"],
+    "Orange": ["Excitement", "Fire", "Energy", "Autumn", "Leaves"],
+    "Violete": ["Warmth", "Sophistication", "Power", "Perfection", "Supporting"],
+    "Brown": ["Grief", "Simplicity", "Family"],
+    "Black": ["Sophistication", "Expensive", "Fear", "Death", "Greif", "Depression", "Seriousness", "Prestige"],
+    "White": ["Sincerity", "Purity", "Faith", "Innocence", "Simplicity", "Self-reliant"],
+    "Gray": ["Neutral", "Indifferent", "Balance", "Stability", "Practical"]
+}

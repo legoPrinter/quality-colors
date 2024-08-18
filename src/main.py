@@ -69,6 +69,15 @@ def find_color_weights(user_values):
 
     return weights_of_colors
 
+def pick_largest_weight(value_set):
+    max_value = -1.0
+    max_key = 0
+    for (key, value) in value_set.items():
+        if value > max_value:
+            max_value = value
+            max_key = key
+    return max_key
+    
 
 def find_top_n_weight_keys(value_set, n):
 
@@ -77,15 +86,11 @@ def find_top_n_weight_keys(value_set, n):
 
     result = []
     for _count in range(0, n):
-        max_value = -1
-        max_key = 0
-        for key in value_set:
-            value = value_set[key]
-            if value > max_value:
-                max_value = value
-                max_key = key
-        result.append(max_key)
+        max_key = pick_largest_weight(value_set)
+
         value_set.pop(max_key)
+        result.append(max_key)
+
     return result
 
 
