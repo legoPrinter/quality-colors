@@ -206,7 +206,5 @@ def get_user_qualities(num_core_values, num_sources_of_pride):
         "sources of pride": example_user_qualities["sources of pride"], #get_user_sources_of_pride(num_sources_of_pride),
         "personality traits": example_user_qualities["personality traits"] #get_user_personality_traits()
     }
-
-    print(user_qualities)
     
     return user_qualities

@@ -21,6 +21,7 @@ COLORS = {
 }
 
 color_qualities = json.load(open("../res/color_qualities.json"))
+color_info = json.load(open("../res/color_info.json"))
 
 def merge_user_qualities_to_core_values(user_qualities):
     core_values = user_qualities["core values"]
@@ -65,8 +66,6 @@ def find_color_weights(user_values):
 
         weights_of_colors[color_name] = weight_of_color
 
-    print(weights_of_colors)
-
     return weights_of_colors
 
 def pick_largest_weight(value_set):
@@ -94,6 +93,10 @@ def find_top_n_weight_keys(value_set, n):
     return result
 
 
+def print_color(color_name, text):
+    color_rgb = COLORS[color_name]
+    cprint("\033[38;2;" + str(color_rgb[0]) + ";" + str(color_rgb[1]) + ";" + str(color_rgb[2]) + "m" + text + "\033[0m")
+
 # 1. record the user's traits & values
 user_qualities = user_reader.get_user_qualities(NUM_CORE_VALUES_FROM_INPUT, 5)
 
@@ -106,20 +109,29 @@ color_weights = find_color_weights(user_values)
 # 3. pick the N most relavant colors
 top_color_names = find_top_n_weight_keys(color_weights, NUM_SELECTED_COLORS)
 
-# 4. convert the color names to rgb values
-top_colors_rgb = []
-for color_name in top_color_names:
-    top_colors_rgb.append(COLORS[color_name])
-
 # 5. display the colors
 
 print("| these are your colors from most to least significant: \n")
 
 for i in range(0, NUM_SELECTED_COLORS):
-    color = top_colors_rgb[i]
     color_name = top_color_names[i]
     color_weight = int(color_weights[color_name] * 100)
 
-    displayed_string = "| - " + color_name + ": " + str(color_weight) + "% match"
+    print_color(color_name, "| - " + color_name + ": " + str(color_weight) + "% match")
 
-    cprint("\033[38;2;" + str(color[0]) + ";" + str(color[1]) + ";" + str(color[2]) + "m" + displayed_string + "\033[0m")
+color_names = list(color_info.keys())
+
+while True:
+    print("type a color to learn more about it. Type 'exit' to exit the program: ")
+    response = input().lower()
+
+    if response == "exit":
+        break
+
+    if response in color_names:
+        print_color(response, response[0].upper() + response[1:] + ": ")
+        for attribute in color_info[response]:
+            print_color(response, f" - {attribute}")
+        continue
+    
+    print(f"could not find '{response}'")

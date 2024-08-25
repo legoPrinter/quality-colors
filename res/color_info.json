@@ -1,13 +1,13 @@
 {
-    "Red": ["Lust", "Power", "Royalty", "Excitement", "Love", "Speed", "Anger", "Passion", "Danger", "Communication"],
-    "Yellow": ["Competence", "Happiness", "Cheap", "Low quality", "Sunshine", "Ideas"],
-    "Green": ["Nature", "Health/Healing", "Support", "Money", "Luck", "Youth", "Fertility", "Jealousy"],
-    "Blue": ["Sophistication", "Competence", "High quality", "Corporate", "Reliability", "Ocean", "Sky", "Peace", "Stability", "Inspiration", "Wisdom", "Truth", "Sadness", "Depression"],
-    "Pink": ["Authority", "Flirty and feminine", "Sweetness"],
-    "Orange": ["Excitement", "Fire", "Energy", "Autumn", "Leaves"],
-    "Violete": ["Warmth", "Sophistication", "Power", "Perfection", "Supporting"],
-    "Brown": ["Grief", "Simplicity", "Family"],
-    "Black": ["Sophistication", "Expensive", "Fear", "Death", "Greif", "Depression", "Seriousness", "Prestige"],
-    "White": ["Sincerity", "Purity", "Faith", "Innocence", "Simplicity", "Self-reliant"],
-    "Gray": ["Neutral", "Indifferent", "Balance", "Stability", "Practical"]
+    "red": ["lust", "power", "royalty", "excitement", "love", "speed", "anger", "passion", "danger", "communication"],
+    "yellow": ["competence", "happiness", "cheap", "low quality", "sunshine", "ideas"],
+    "green": ["nature", "health/healing", "support", "money", "luck", "youth", "fertility", "jealousy"],
+    "blue": ["sophistication", "competence", "high quality", "corporate", "reliability", "ocean", "sky", "peace", "stability", "inspiration", "wisdom", "truth", "sadness", "depression"],
+    "pink": ["authority", "flirty and feminine", "sweetness"],
+    "orange": ["excitement", "fire", "energy", "autumn", "leaves"],
+    "violete": ["warmth", "sophistication", "power", "perfection", "supporting"],
+    "brown": ["grief", "simplicity", "family"],
+    "black": ["sophistication", "expensive", "fear", "death", "greif", "depression", "seriousness", "prestige"],
+    "white": ["sincerity", "purity", "faith", "innocence", "simplicity", "self-reliant"],
+    "gray": ["neutral", "indifferent", "balance", "stability", "practical"]
 }
